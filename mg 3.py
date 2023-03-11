@@ -19,7 +19,7 @@ class Robot:
         self.defense = True
 
     def GiveUp(self, diri, musuh):
-        if musuh[1] >= diri[1] and musuh[2] >= diri[2] and musuh[3] >= diri[3]:
+        if musuh[0] >= diri[0] * 2 and musuh[1] >= diri[1] * 2 and musuh[2] >= diri[2] * 2:
             return True
         else:
             return False
@@ -28,7 +28,7 @@ print("Masukan informasi robot 1: ")
 robot_1 = Robot(input(), input(), input(), input())\
 
 while True:
-    mode_robot_1 = (input("Masukan mode robot (1.Mute 2.Defense): "))
+    mode_robot_1 = (int(input("Masukan mode robot (1.Mute 2.Defense): ")))
     if mode_robot_1 == 1:
         robot_1.Mute()
         break
@@ -41,7 +41,7 @@ while True:
 print("Masukan informasi robot 2: ")
 robot_2 = Robot(input(), input(), input(), input())
 while True:
-    mode_robot_2 = (input("Masukan mode robot (1.Mute 2.Defense): "))
+    mode_robot_2 = (int(input("Masukan mode robot (1.Mute 2.Defense): ")))
     if mode_robot_2 == 1:
         robot_2.Mute()
         break
